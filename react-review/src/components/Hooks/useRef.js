@@ -7,11 +7,10 @@ class TestCpn extends React.Component {
 }
 
 const TestCpn2 = forwardRef((props, ref) => {
-    return <h2 ref={ref}>TestCpn2</h2>
+    return <TestCpn ref={ref} />
 })
 
 export default function RefHookDemo01() {
-
     const titleRef = useRef();
     const inputRef = useRef();
     const testRef = useRef();

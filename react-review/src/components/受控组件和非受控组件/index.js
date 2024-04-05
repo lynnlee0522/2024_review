@@ -20,8 +20,6 @@ class Counter extends PureComponent {
     }
 
     increment(args) {
-        console.log("---args---", args);
-
         this.setState({
             counter: this.state.counter + 1
         })
@@ -46,7 +44,6 @@ export default class ControlledComponent extends Component {
     handleChange = (e) => {
         this.divRef.current.innerHTML = this.inputRef.current.value;
         this.counterRef.current.increment('hahah');
-
         // console.log("---profile---", this.profileRef.current.innerHTML);
         this.profileRef.current.innerHTML = this.inputRef.current.value;
     }

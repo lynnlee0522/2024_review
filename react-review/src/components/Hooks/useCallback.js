@@ -25,6 +25,11 @@ export default function CallbackHookDemo02() {
     console.log("执行increment2函数");
     setCount(count + 1);
   }, [count]);
+  try {
+    
+  } catch (error) {
+    
+  }
 
   return (
     <div>
