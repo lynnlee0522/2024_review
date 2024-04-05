@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="workspace horizontal">
+        <div class="container vertical" style="width: 40%">
+            <div class="terminal bg-red" style="height: 40%">40%</div>
+            <div class="terminal bg-yellow" style="height: 60%">60%</div>
+        </div>
+        <div class="terminal bg-blue" style="width: 60%">60%</div>
+    </div>
+    <script>
+        const tree = {
+            type: 'workspace',
+            orientation: 'horizontal',
+            data:'100%',
+            left: {
+                type: 'container',
+                data: '40%',
+                orientation: 'vertical',
+                left: {
+                    type: 'terminal',
+                    data: '40%',
+                },
+                right: {
+                    type: 'terminal',
+                    data: '60%',
+                }
+            },
+            right: {
+                type: 'terminal',
+                data: '60%',
+            }
+        }
+
+        // 转化为html结构
+        // 递归函数：将树形结构转换为HTML节点
+        function createHTMLNode(node) {
+            const element = document.createElement('div');
+
+            if (node.type === 'workspace') {
+                element.classList.add('workspace');
+                element.classList.add(node.orientation);
+
+                const leftNode = createHTMLNode(node.left);
+                const rightNode = createHTMLNode(node.right);
+
+                element.appendChild(leftNode);
+                element.appendChild(rightNode);
+            } else if (node.type === 'container') {
+                element.classList.add('container');
+                element.classList.add(node.orientation);
+
+                const leftNode = createHTMLNode(node.left);
+                const rightNode = createHTMLNode(node.right);
+
+                element.appendChild(leftNode);
+                element.appendChild(rightNode);
+            } else if (node.type === 'terminal') {
+                element.classList.add('terminal');
+                element.textContent = node.data;
+            }
+
+            return element;
+        }
+
+        // // 获取根节点并将其添加到页面中
+        // const rootNode = createHTMLNode(tree);
+        // document.body.appendChild(rootNode);
+    </script>
+</body>
+
+</html>
