@@ -49,7 +49,7 @@ function deepClone(originValue, map = new WeakMap()) {
         newObject[sKey] = deepClone(originValue[sKey], map)
     }
 
-    return originValue
+    return newObject
 }
 
 
@@ -86,10 +86,10 @@ function deepClone(originValue, map = new WeakMap()) {
 
 const obj2 = {
     name: 'lilin'
-  }
-  
-  obj2.info = obj2
-  
-  const newObj2 = deepClone(obj2)
-  
-  console.log("---", newObj2);
+}
+
+obj2.info = obj2
+
+const newObj2 = deepClone(obj2)
+
+console.log("---", newObj2);

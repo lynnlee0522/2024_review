@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="count"></div>
+    <button>+1</button>
+    <!-- <script src="./eventEmitter.js"></script> -->
+    <!-- <script src="./bind.js"></script> -->
+    <!-- <script src="./apply.js"></script> -->
+    <!-- <script src="./继承.js"></script> -->
+    <!-- <script src="./红绿灯.js"></script> -->
+    <!-- <script src="./迭代器.js"></script> -->
+    <!-- <script src="./树转换2.js"></script> -->
+    <!-- <script src="./深拷贝.js"></script> -->
+    <!-- <script src="./防抖.js"></script> -->
+    <!-- <script src="./节流.js"></script> -->
+    <!-- <script src="../js/深拷贝/index.js"></script> -->
+    <script src="./promise.js"></script>
+
+    <!-- <div id="root">
+        <div id="parent">
+            <button id="btn">hahha</button>
+        </div>
+    </div> -->
+
+    <!-- <script>
+        const root = document.getElementById('root')
+        const parent = document.getElementById('parent')
+        const btn = document.getElementById('btn')
+
+        // btn.addEventListener('click', (event) => {
+        //     console.log("--btn---", event, event.target);
+        // })
+        // btn.addEventListener('click', (event) => {
+        //     console.log("--btn-capture--", event, event.target);
+        // }, true)
+
+        // parent.addEventListener('click', (event) => {
+        //     console.log("--parent---", event, event.target);
+        // })
+        // parent.addEventListener('click', (event) => {
+        //     console.log("--parent-capture--", event, event.target);
+        // }, true)
+
+        root.addEventListener('click', (event) => dispatchEvent(event, false))
+        root.addEventListener('click', (event) => dispatchEvent(event, true), true)
+
+        function dispatchEvent(event, useCapture) {
+            let paths = [];
+            let current = event.target;
+            while (current) {
+                paths.push(current);
+                current = current.parentNode;
+            }
+
+            if (useCapture) {
+                for(let i = paths.length -1 ; i >= 0; i--) {
+                    let handler = paths[i].onClickCapture;
+                    handler && handler()
+                }
+            } else {
+                for(let i = 0 ; i < paths.length; i++) {
+                    let handler = paths[i].onClick;
+                    handler && handler()
+                }
+            }
+        }
+
+        btn.onClick = () => {
+            console.log("---btn----");
+        }
+
+        btn.onClickCapture = () => {
+            console.log("---btn capture----");
+        }
+    </script> -->
+</body>
+
+</html>

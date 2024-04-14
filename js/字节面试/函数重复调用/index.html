@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+
+    <script src="./index.js"></script>
+    <div>hahahah</div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>XSS Example</title>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <p>Hello, <span id="username"></span></p>
+
+    <script>
+        // 获取用户输入的名字并显示在页面上
+        const userInput = prompt("Please enter your name:");
+        document.getElementById("username").textContent = userInput;
+    </script>
+</body>
+
+</html>

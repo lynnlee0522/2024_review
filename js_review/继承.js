@@ -31,9 +31,5 @@ Student.prototype.study = function () {
     console.log("---study---");
 }
 
-const stu = new Student('lilin', '1')
-stu.study();
-stu.running();
-
+const stu = new Student('lilin', 233)
 console.log("---stu---", stu);
-
